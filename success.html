@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Received</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #000;
+      color: rgb(255, 34, 255);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .message {
+      background: #111;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 34, 255, 0.5);
+    }
+    .message h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .message p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .message i {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: rgb(255, 34, 255);
+    }
+    #countdown {
+      font-weight: bold;
+      color: red;
+    }
+  </style>
+  <script>
+    let seconds = 5;
+    function countdown() {
+      const counter = document.getElementById("countdown");
+      counter.innerText = seconds;
+      seconds--;
+      if (seconds < 0) {
+        window.location.href = "index.html";
+      } else {
+        setTimeout(countdown, 1000);
+      }
+    }
+    window.onload = countdown;
+  </script>
+</head>
+<body>
+  <div class="message">
+    <i class="fas fa-check-circle"></i>
+    <h1>Order Sent Successfully!</h1>
+    <p>Thank you! Your order has been received.</p>
+    <p>Redirecting to home in <span id="countdown">5</span> seconds...</p>
+  </div>
+</body>
+</html>

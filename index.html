@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ngadiya Kaigama | Astra’s</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #f2f2f2;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #111010;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      color: rgb(255, 34, 255);
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color:rgb(255, 34, 255);
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    nav a:hover {
+      color: purple;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      color:rgb(255, 34, 255);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #000;
+        width: 100%;
+        flex-direction: column;
+        padding: 1rem;
+        display: none;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px 0;
+      text-align: center;
+      animation: fadeInUp 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgb(255, 34, 255);
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color:rgb(255, 177, 255);
+    }
+
+    .typing-text {
+      color: rgb(255, 34, 255);
+      font-weight: bold;
+      font-size: 1.4rem;
+      height: 40px;
+      overflow: hidden;
+    }
+
+    .hero a {
+      margin-top: 20px;
+      display: inline-block;
+      background: rgb(255, 34, 255);
+      color: #000;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .hero a:hover {
+      background: purple;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #111;
+      color: rgb(255, 163, 255);
+      font-size: 0.95rem;
+      border-top: 1px solid #222;
+    }
+
+    footer i {
+      color:rgb(255, 34, 255);
+      margin-right: 5px;
+    }
+
+    footer span {
+      color: rgb(255, 34, 255);
+      font-weight: bold;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgb(255, 34, 255);
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      box-shadow: 0 0 10px rgb(255, 34, 255);
+      z-index: 1001;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: rgb(255, 34, 255);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Ngadiya Kaigama</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav id="navbar">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="about.html"><i class="fas fa-user"></i> About</a>
+      <a href="products.html"><i class="fas fa-store"></i> Products</a>
+      <a href="order.html"><i class="fas fa-shopping-cart"></i>Order Products</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <img src="IMG-20250721-WA0005.jpg" alt="Ngadiya">
+    <h2>Hello, I am <span class="typing-text" id="typing"></span></h2>
+    <p>Welcome to my official portfolio website</p>
+    <p>I’m a Nigerian firefighter, Public Relations Officer, and a proud businesswoman.</p>
+    <p>Astra’s is where I share my journey — saving lives and serving delicious dried fish and spicy yaji.</p>
+    <a href="about.html">Learn More</a>
+  </section>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/234XXXXXXXXXX" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    <p><i class="fas fa-copyright"></i> 2025 <span>Astra’s</span>. Built with <i class="fas fa-heart"></i> by <span>Skylover</span>.</p>
+  </footer>
+
+  <script>
+    const roles = ["a Firefighter", "a Farmer", "a Businesswoman", "an Innovator"];
+    let i = 0;
+    let typingEl = document.getElementById("typing");
+
+    function typeRole() {
+      let role = roles[i];
+      typingEl.innerHTML = "";
+      let j = 0;
+      let typeInterval = setInterval(() => {
+        if (j < role.length) {
+          typingEl.innerHTML += role[j];
+          j++;
+        } else {
+          clearInterval(typeInterval);
+          setTimeout(() => {
+            i = (i + 1) % roles.length;
+            typeRole();
+          }, 1500);
+        }
+      }, 100);
+    }
+
+    function toggleMenu() {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('active');
+    }
+
+    window.onload = typeRole;
+  </script>
+</body>
+</html>
